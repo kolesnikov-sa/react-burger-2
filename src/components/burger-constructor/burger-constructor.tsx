@@ -1,8 +1,8 @@
 import {Tab} from "@ya.praktikum/react-developer-burger-ui-components";
 import {useState} from "react";
 import styles from "./burger-constructor.module.css";
-import propTypes from "prop-types";
 import {IngredientCard} from "./ingredient-card/ingredient-card";
+import {DataElementType} from "../../utils/types";
 
 export const BurgerConstructor = (props: any) => {
     const [current, setCurrent] = useState("bun");
@@ -25,31 +25,31 @@ export const BurgerConstructor = (props: any) => {
                 <div className={"text text_type_main-medium"}>Булки</div>
                 <div className={`${"mb-2"} ${styles.elements}`}>
                     {
-                        props.data.map((item: any) => {
-                            if (item.type === "bun") {
+                        props.data
+                            .filter((item: any) => item.type === "bun")
+                            .map((item: any) => {
                                 return <IngredientCard data={item} key={item._id}/>;
-                            }
-                        })
+                            })
                     }
                 </div>
                 <div className={"text text_type_main-medium mt-10"}>Соусы</div>
                 <div className={`${"mb-2"} ${styles.elements}`}>
                     {
-                        props.data.map((item: any) => {
-                            if (item.type === "sauce") {
+                        props.data
+                            .filter((item: any) => item.type === "sauce")
+                            .map((item: any) => {
                                 return <IngredientCard data={item} key={item._id}/>;
-                            }
-                        })
+                            })
                     }
                 </div>
                 <div className={"text text_type_main-medium mt-10"}>Начинки</div>
                 <div className={`${"mb-2"} ${styles.elements}`}>
                     {
-                        props.data.map((item: any) => {
-                            if (item.type === "main") {
+                        props.data
+                            .filter((item: any) => item.type === "main")
+                            .map((item: any) => {
                                 return <IngredientCard data={item} key={item._id}/>;
-                            }
-                        })
+                            })
                     }
                 </div>
             </div>
@@ -58,5 +58,5 @@ export const BurgerConstructor = (props: any) => {
 };
 
 BurgerConstructor.propTypes = {
-    data: propTypes.array
+    data: DataElementType
 };

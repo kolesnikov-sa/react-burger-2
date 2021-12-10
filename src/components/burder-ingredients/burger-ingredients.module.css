@@ -38,10 +38,15 @@
     align-items: center;
 }
 
+.element > svg {
+    cursor: grab;
+}
+
 .top .element,
 .bottom .element {
     justify-content: flex-end;
 }
+
 
 .summary {
     display: flex;
