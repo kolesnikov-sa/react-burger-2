@@ -1,9 +1,13 @@
 import {CurrencyIcon} from "@ya.praktikum/react-developer-burger-ui-components";
-import propTypes from "prop-types";
-
 import styles from "./ingredient-card.module.css";
+import {IngredientType} from "../../app";
+import {IngredientPropType} from "../../../utils/types";
 
-export const IngredientCard = (props: any) => {
+type IngredientCardType = {
+    data: IngredientType
+}
+
+export const IngredientCard = (props: IngredientCardType) => {
     return (
         <div className={`${"mt-6 mr-2 ml-2"} ${styles.card}`}>
             <img className={`${"ml-4 mr-4"} ${styles.img}`} src={props.data.image} alt={props.data.name}/>
@@ -20,5 +24,5 @@ export const IngredientCard = (props: any) => {
 };
 
 IngredientCard.propTypes = {
-    data: propTypes.object
+    data: IngredientPropType.isRequired
 };

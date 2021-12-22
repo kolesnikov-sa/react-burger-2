@@ -1,6 +1,7 @@
 import styles from "./menu-item.module.css";
 import {BurgerIcon, ListIcon, ProfileIcon} from "@ya.praktikum/react-developer-burger-ui-components";
 import React from "react";
+import PropTypes from 'prop-types';
 
 type MenuItemType = {
     title: string;
@@ -41,3 +42,9 @@ export const MenuItem = (props: MenuItemType) => {
         );
     }
 };
+
+MenuItem.propTypes = {
+    title: PropTypes.string.isRequired,
+    icon: PropTypes.oneOf(["burger", "list", "profile"]).isRequired,
+    type: PropTypes.oneOf(["active", "inactive"]).isRequired
+}

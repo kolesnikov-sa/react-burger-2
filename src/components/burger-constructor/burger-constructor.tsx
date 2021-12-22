@@ -2,10 +2,18 @@ import {Tab} from "@ya.praktikum/react-developer-burger-ui-components";
 import {useState} from "react";
 import styles from "./burger-constructor.module.css";
 import {IngredientCard} from "./ingredient-card/ingredient-card";
-import {DataElementType} from "../../utils/types";
+import PropTypes from "prop-types";
+import { IngredientPropType } from "../../utils/types";
+import {IngredientType} from "../app";
 
-export const BurgerConstructor = (props: any) => {
+type BurgerConstructorType = {
+    data: Array<IngredientType>
+}
+
+export const BurgerConstructor = (props: BurgerConstructorType) => {
     const [current, setCurrent] = useState("bun");
+
+    if (!props.data.length) return null;
 
     return (
         <section className={styles.section}>
@@ -58,5 +66,5 @@ export const BurgerConstructor = (props: any) => {
 };
 
 BurgerConstructor.propTypes = {
-    data: DataElementType
+    data: PropTypes.arrayOf(IngredientPropType).isRequired
 };

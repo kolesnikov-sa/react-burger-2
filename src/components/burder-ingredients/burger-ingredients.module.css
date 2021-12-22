@@ -38,6 +38,11 @@
     align-items: center;
 }
 
+.element:not(:first-child),
+.element:not(:last-child) {
+    cursor: pointer;
+}
+
 .element > svg {
     cursor: grab;
 }
