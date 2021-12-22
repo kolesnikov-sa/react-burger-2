@@ -1,0 +1,35 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.title {
+    color: #F2F2F3;
+}
+
+.parameters {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.parameter {
+    min-width: 112px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.parameter:not(:last-child) {
+    margin-right: 20px;
+}
+
+.parameter__title {
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+}

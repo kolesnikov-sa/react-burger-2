@@ -1,0 +1,12 @@
+.li {
+    border-radius: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+
+.li svg {
+    margin-right: 8px;
+}
